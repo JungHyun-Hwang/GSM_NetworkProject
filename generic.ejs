@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<!--
+	Introspect by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>escape</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">Escape</a>
+					<nav id="nav">
+						<a onclick="post_search()">Search</a>
+						<a href="/generic/logout">logout</a>
+					</nav>
+				</div>
+			</header>
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+			<h3 name = "gnc_id" style = "display : none;"><%= id %></h3>
+
+		<!-- Main -->
+			<section id="main" >
+				<div class="inner">
+					<section>
+						<h3>신청 관리</h3>
+						<div class="table-wrapper">
+							<table class="alt">
+								<thead>
+									<tr>
+										<th>신청자</th>
+										<th>장소</th>
+										<th>외출 시간</th>
+										<th>외출/조퇴</th>
+										<th>상태</th>
+									</tr>
+								</thead>
+								<tbody>
+								<% for(var i = 0;i < lists_.length;i++) { %>
+									<tr>	
+										<td><%= lists_[i].stu_name_ %></td>
+										<td><a onclick="arts('<%= lists_[i].Content %>')"><%= lists_[i].Reason %></a></td>
+										<td><%= lists_[i].Arv_time %></td>
+										<td><%= lists_[i].g_l %></td>
+										<td><a onclick="approve(1, '<%= lists_[i].code_ %>')">승인</a>/<a onclick="approve(2, '<%= lists_[i].code_ %>')">거부</a></td>
+									</tr>
+								<% } %>
+								</tbody>
+							</table>
+						</div>
+					</section>
+				</div>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/generic_table_.js"></script>
+
+	</body>
+</html>

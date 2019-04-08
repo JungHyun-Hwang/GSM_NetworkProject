@@ -1,0 +1,20 @@
+create event every_init_
+ON SCHEDULE EVERY 1 DAY
+STARTS '2018-11-30 00:00:00'
+ENABLE
+DO
+update student set every_ = 1;
+
+create event ctf_init_
+ON SCHEDULE EVERY 1 MONTH
+STARTS '2019-01-01 00:00:00'
+ENABLE
+DO
+update student set ctf_num = 2;
+
+create event std_by_init
+ON SCHEDULE EVERY 1 DAY
+STARTS '2018-12-04 00:00:00'
+ENABLE
+DO
+update list set Standby = 2 where standby = 0;

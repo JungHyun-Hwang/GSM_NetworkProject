@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<!--
+	Introspect by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>escape</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="logo">Escape</a>
+				<nav id="nav">
+					<a href="/element/logout">logout</a>
+				</nav>
+			</div>
+		</header>
+		<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a><br>
+
+			
+		<h3 name = "emt_id" style = "display : none;"><%= id %></h3>
+		<section id="main">
+			<div class="inner">
+				<h3>이번달 남은 탈주 횟수 : <%= ctf_num %></h3>
+				<section>
+						<h3>신청서 작성</h3>
+						<form name = "ctf_form">
+							<div class="row uniform 50%">
+								<div class="12u$">
+									<input type="email" name="ctf_time" id="demo-email" value="" placeholder="돌아오는 시간" />
+								</div>
+								<div class="12u$">
+									<div class="select-wrapper">
+										<select name="ctf_place" id="demo-category">
+											<option value="">- 장소 -</option>
+											<option value="병원">병원</option>
+											<option value="서점">서점</option>
+											<option value="마트">마트</option>
+											<option value="학원">학원</option>
+											<option value="집">집</option>
+											<option value="기타">기타</option>
+										</select>
+									</div>
+								</div>
+								<div class="12u$">
+									<div class="select-wrapper">
+										<select name = "g_l" id="demo-category">
+												<option value="">외출/조퇴</option>
+												<option value="외출">외출</option>
+												<option value="조퇴">조퇴</option>
+										</select>
+									</div>
+								</div>
+								<div class="12u$">
+									<textarea name="ctf_reason" id="demo-message" placeholder="정확한 사유를 적어주세요" rows="6"></textarea>
+								</div>
+								<div class="12u$">
+									<ul class="actions">
+										<li><input type="button" onclick="send_ctf_form()" value="신청하기" class="special" /></li>
+										<li><input type="reset" value="초기화" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</section>			
+
+				<header class="major special">
+				</header>
+				<section>
+					<h3>신청 조회</h3>
+					<div class="table-wrapper">	
+						<table class="alt">
+							<thead>
+								<tr>
+									<th>신청 시간</th>
+									<th>장소</th>
+									<th>돌아오는 시간</th>
+									<th>외출/조퇴</th>
+									<th>상태</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% for(var i = 0;i < lists_.length;i++) { %>
+									<tr>	
+										<td><%= lists_[i].day %></td>
+										<td><a onclick="art('<%= lists_[i].Content %>')"><%= lists_[i].Reason %></a></td>
+										<td><%= lists_[i].Arv_time %></td>
+										<td><%= lists_[i].g_l %></td>
+										<td><%= lists_[i].Standby %></td>
+									</tr>
+								<% } %>
+							</tbody>
+						</table>
+						
+					</div>
+				</section>
+			</div>
+		</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/tables_.js"></script>
+
+	</body>
+</html>

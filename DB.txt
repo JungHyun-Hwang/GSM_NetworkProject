@@ -1,0 +1,15 @@
+Create table Student
+(
+	Stu_id varchar(10) not null, 
+	Stu_pw varchar(16) not null,
+	Grade INT not null,
+	Class INT not null,
+	Number INT not null,
+	Name varchar(20) not null,
+	Tel varchar(15),
+	Ctf_num INT not null,
+    	every_ int not null,
+	Tch_id varchar(10) not null ,
+	PRIMARY KEY (Stu_id),
+	FOREIGN KEY (Tch_id) REFERENCES Teacher (Tch_id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
